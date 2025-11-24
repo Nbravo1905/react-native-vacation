@@ -8,8 +8,6 @@ Ayuda a los usuarios a descubrir y planificar sus vacaciones soñadas, explorand
 
 Aquí hay algunas vistas previas de la aplicación Vacation:
 
-![Captura 1](./assets/previews/Screenshot_1763951475.png)
-
-![Captura 2](./assets/previews/Screenshot_1763951502.png)
-
-![Captura 3](./assets/previews/Screenshot_1763951512.png)
+| | | |
+|---|---|---|
+| ![Captura 1](./assets/previews/Screenshot_1763951475.png) | ![Captura 2](./assets/previews/Screenshot_1763951502.png) | ![Captura 3](./assets/previews/Screenshot_1763951512.png) |
