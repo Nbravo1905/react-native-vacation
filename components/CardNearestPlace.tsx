@@ -1,68 +1,95 @@
-import { INearestPlacesDummy } from '@/data/nearestPlacesDummy'
-import Ionicons from '@expo/vector-icons/Ionicons'
-import React from 'react'
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { INearestPlacesDummy } from '@/data/nearestPlacesDummy';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import React from 'react';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-const CardNearestPlace = ({ name, ubi, kms, image }: INearestPlacesDummy) => {
+const CardNearestPlace = React.memo(({ name, ubi, kms, image }: INearestPlacesDummy) => {
   return (
-    <View style={{ backgroundColor: '#fff', borderRadius: 16, padding: 10 }}>
-      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 15 }}>
+    <View style={styles.container}>
+      <View style={styles.row}>
         <Image
           source={{ uri: image }}
-          style={{
-            width: 64,
-            height: 64,
-            borderRadius: 8
-          }}
+          style={styles.image}
+          resizeMode="cover"
         />
-        <View style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
-          <Text style={{
-            fontSize: 12,
-            fontWeight: 'bold',
-            fontFamily: 'Nunito'
-          }}
-          >{name}</Text>
-          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 5 }}>
+        <View style={styles.infoColumn}>
+          <Text style={styles.nameText}>{name}</Text>
+          <View style={styles.locationRow}>
             <Ionicons name='location' size={18} color={'#BDBDBD'} />
-            <Text style={{
-              fontSize: 10,
-              fontWeight: 'semibold',
-              color: '#646464',
-              fontFamily: 'Nunito'
-            }}>{ubi}</Text>
+            <Text style={styles.ubiText}>{ubi}</Text>
           </View>
-          <Text style={{
-            fontSize: 12,
-            fontWeight: 'semibold',
-            color: '#646464',
-            fontFamily: 'Nunito'
-          }}>{kms} Km</Text>
+          <Text style={styles.kmsText}>{kms} Km</Text>
         </View>
         <TouchableOpacity
-          style={{
-            backgroundColor: '#5893D8',
-            width: 56,
-            height: 24,
-            borderRadius: 8,
-            alignItems: 'center',
-            justifyContent: 'center',
-            right: 0,
-            position: 'absolute'
-          }}
+          style={styles.routeButton}
           activeOpacity={0.7}
+          accessibilityLabel={`Get route to ${name}`}
         >
-          <Text style={{
-            fontSize: 12,
-            fontWeight: 'semibold',
-            color: '#fff',
-            fontFamily: 'Nunito'
-          }}>Route</Text>
+          <Text style={styles.routeText}>Route</Text>
         </TouchableOpacity>
       </View>
     </View>
   )
-}
+});
 
 export default CardNearestPlace
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#fff',
+    borderRadius: 16,
+    padding: 10,
+  },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 15,
+  },
+  image: {
+    width: 64,
+    height: 64,
+    borderRadius: 8,
+  },
+  infoColumn: {
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+  },
+  nameText: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    fontFamily: 'Nunito',
+  },
+  locationRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5,
+  },
+  ubiText: {
+    fontSize: 10,
+    fontWeight: 'semibold',
+    color: '#646464',
+    fontFamily: 'Nunito',
+  },
+  kmsText: {
+    fontSize: 12,
+    fontWeight: 'semibold',
+    color: '#646464',
+    fontFamily: 'Nunito',
+  },
+  routeButton: {
+    backgroundColor: '#5893D8',
+    width: 56,
+    height: 24,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    right: 0,
+    position: 'absolute',
+  },
+  routeText: {
+    fontSize: 12,
+    fontWeight: 'semibold',
+    color: '#fff',
+    fontFamily: 'Nunito',
+  },
+})

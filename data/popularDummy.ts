@@ -30,7 +30,7 @@ export const popularDummy = [
   },
   {
     id: 5,
-    name: 'Jardín Botánico de Medellín',
+    name: 'Jardín Botánico',
     ubi: 'Medellín, Antioquia',
     kms: '18,4',
     image: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
@@ -44,7 +44,7 @@ export const popularDummy = [
   },
   {
     id: 7,
-    name: 'Catedral de Sal de Zipaquirá',
+    name: 'Catedral de Sal',
     ubi: 'Zipaquirá, Cundinamarca',
     kms: '25,6',
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
